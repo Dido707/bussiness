@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>设备回收</title>
+		<link href="favicon.ico" rel="shortcut icon">
+
+		<script type="text/javascript" src="http://cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+		<script type="text/javascript" src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
+
+		<!-- my file -->
+		<script type="text/javascript" src="./js/my.js"></script>
+		<link rel="stylesheet" type="text/css" href="./css/my.css" />
+	</head>
+
+	<body>
+		<!--顶部导航-->
+		<div class="container-fluid">
+			<div class="row header">
+				<div class="col-xs-2 logo"> <img src="img/vision.png"> </div>
+				<div class="col-xs-8 title"> 业务办理系统 </div>
+				<div class="col-xs-2 username ">
+					<div class="log-out fr">
+						<a href="log in.html"></a>
+					</div>
+					<div class="sitting fr">
+					</div>
+					<div class="fr">用户名</div>
+				</div>
+			</div>
+		</div>
+		<!--侧边导航-->
+		<div class="sidebar">
+			<ul class="">
+				<li>
+					<a href="index.html" class="yonghu">用户管理</a>
+				</li>
+				<li>
+					<a href="yewu.html" class="yewu">业务办理</a>
+				</li>
+				<li>
+					<a href="recycle.html" class="recycle  active active-rec-pic">设备回收</a>
+				</li>
+			</ul>
+		</div>
+
+		<!--主体-->
+		<div class="container-fluid mainbody">
+			<div class="col-xs-12 mainplace">
+				<!--搜索-->
+				<div class="row search-pro">
+					<div class="search-name">
+						<div class="pro-mac fl">设备MAC</div>
+						<div class="form-group saomiao fl"> <input type="text" class="form-control" id="searchInput2" placeholder="请使用扫描枪扫描设备"> </div>
+						<button type="submit" class="btn btn-primary fl" id="btnAddPro">回收</button>
+					</div>
+				</div>
+
+				<!--列表-->
+				<div class="row">
+					<div class="col-xs-12 num-table">
+						<table class="table">
+							<tr>
+								<th>ID</th>
+								<th>初始账号</th>
+								<th>个性账号</th>
+								<th>所属小区</th>
+								<th>楼号</th>
+								<th>单元</th>
+								<th>房间号</th>
+								<th>姓名</th>
+								<th>设备名称</th>
+								<th>设备MAC</th>
+								<th>状态</th>
+								<th>时长</th>
+								<th>停用时间</th>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>1234567890</td>
+								<td>0987654321</td>
+								<td>怡美家园</td>
+								<td>1号楼</td>
+								<td>2单元</td>
+								<td>101室</td>
+								<td>王力宏</td>
+								<td>红外探测器</td>
+								<td>22-11-00-00-00</td>
+								<td>停用</td>
+								<td>2天</td>
+								<td>2010.03.12&nbsp;13:00</td>
+							</tr>
+							<tr class="last-td">
+								<td>1</td>
+								<td>1234567890</td>
+								<td>0987654321</td>
+								<td>怡美家园</td>
+								<td>1号楼</td>
+								<td>2单元</td>
+								<td>101室</td>
+								<td>王力宏</td>
+								<td>红外探测器</td>
+								<td>22-11-00-00-00</td>
+								<td>停用</td>
+								<td>2天</td>
+								<td>2010.03.12&nbsp;13:00</td>
+							</tr>
+						</table>
+						<div class="row page">
+							<div class="col-xs-8 ">
+								<h6 class="page-num">当前显示1页，共1条记录</h6> </div>
+							<div class="col-xs-4  hide">
+								<nav class="fr">
+									<ul class="pagination pagination-sm">
+										<li class="disabled">
+											<a href="#">&laquo;</a>
+										</li>
+										<li class="active">
+											<a href="#">1 <span class="sr-only">(current)</span></a>
+										</li>
+										<li>
+											<a href="#">2</a>
+										</li>
+										<li>
+											<a href="#">3</a>
+										</li>
+										<li>
+											<a href="#">&raquo;</a>
+										</li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--回收成功弹窗-->
+		<div class="container-fluid info-box-sm" id="alertSuccess">
+			<div class="row info-sm">
+				<header>回收成功！
+				</header>
+			</div>
+		</div>
+
+		<!--回收失败弹窗-->
+		<div class="container-fluid info-box-sm" id="alertFalse">
+			<div class="row info-sm">
+				<header><span>设备依然使用中，是否强制回收？</span>
+					<div class="btn-close"></div>
+				</header>
+				<div class="form-group">
+					<div class="col-sm-12"> <button type="submit" class="btn btn-primary btn-alert btn-alert-sm" id="">确&nbsp;定</button> </div>
+				</div>
+			</div>
+		</div>
+
+		<!--修改密码弹窗-->
+		<div class="container-fluid info-box" id="alertSitting">
+			<div class="row info">
+				<header>修改密码
+					<div class="btn-close"></div>
+				</header>
+				<form class="form-horizontal" role="form">
+					<div class="form-group"> <label for="inputEmail3" class="col-xs-2 control-label">密码：</label>
+						<div class="col-xs-10"> <input type="password" class="form-control" id="inputEmail3" placeholder=""> </div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-12"> <button type="submit" class="btn btn-primary btn-alert" id="">保&nbsp;存</button> </div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</body>
+
+</html>

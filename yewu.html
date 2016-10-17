@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>业务办理</title>
+		<link href="favicon.ico" rel="shortcut icon">
+
+		<script type="text/javascript" src="http://cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+		<script type="text/javascript" src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
+
+		<!-- my file -->
+		<script type="text/javascript" src="./js/my.js"></script>
+		<link rel="stylesheet" type="text/css" href="./css/my.css" />
+	</head>
+
+	<body>
+		<!--顶部导航-->
+		<div class="container-fluid">
+			<div class="row header">
+				<div class="col-xs-2 logo"> <img src="img/vision.png"> </div>
+				<div class="col-xs-8 title"> 业务办理系统 </div>
+				<div class="col-xs-2 username ">
+					<div class="log-out fr">
+						<a href="log in.html"></a>
+					</div>
+					<div class="sitting fr">
+					</div>
+					<div class="fr">用户名</div>
+				</div>
+			</div>
+		</div>
+		<!--侧边导航-->
+		<div class="sidebar">
+			<ul class="">
+				<li>
+					<a href="index.html" class="yonghu">用户管理</a>
+				</li>
+				<li>
+					<a href="yewu.html" class="yewu active active-yw-pic">业务办理</a>
+				</li>
+				<li>
+					<a href="recycle.html" class="recycle">设备回收</a>
+				</li>
+			</ul>
+		</div>
+
+		<!--主体-->
+		<div class="container-fluid mainbody">
+
+			<div class="col-xs-12 mainplace">
+				<!--搜索-->
+				<div class="row search">
+					<div class="search-name">
+						<div class="dropdown fl">
+							<button class="btn-select dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+								    楼号
+								    <span class="caret caret-md"></span>
+								  </button>
+							<ul class="dropdown-menu search-dropdown" role="menu" aria-labelledby="dropdownMenu1">
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1" href="#">072</a>
+								</li>
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1" href="#">A44</a>
+								</li>
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1" href="#">533</a>
+								</li>
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1" href="#">S6</a>
+								</li>
+							</ul>
+						</div>
+						<div class="dropdown fl">
+							<button class="btn-select dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+								    小区
+								    <span class="caret caret-md"></span>
+								  </button>
+							<ul class="dropdown-menu search-dropdown" role="menu" aria-labelledby="dropdownMenu1">
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1" href="#">072</a>
+								</li>
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1" href="#">A44</a>
+								</li>
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1" href="#">533</a>
+								</li>
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1" href="#">S6</a>
+								</li>
+							</ul>
+						</div>
+						<div class="dropdown fl">
+							<button class="btn-select dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+								    单元
+								    <span class="caret caret-md"></span>
+								  </button>
+							<ul class="dropdown-menu search-dropdown" role="menu" aria-labelledby="dropdownMenu1">
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1" href="#">072</a>
+								</li>
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1" href="#">A44</a>
+								</li>
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1" href="#">533</a>
+								</li>
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1" href="#">S6</a>
+								</li>
+							</ul>
+						</div>
+						<div class="dropdown fl">
+							<button class="btn-select dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+								    房间号
+								    <span class="caret caret-md"></span>
+								  </button>
+							<ul class="dropdown-menu search-dropdown" role="menu" aria-labelledby="dropdownMenu1">
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1" href="#">072</a>
+								</li>
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1" href="#">A44</a>
+								</li>
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1" href="#">533</a>
+								</li>
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1" href="#">S6</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="form-group fl"> <input type="text" class="form-control" id="searchInput" placeholder="输入业务员账号查询"> </div>
+						<button type="submit" class="btn btn-primary fl" id="btnSearch2">搜索账号</button>
+						<button type="submit" class="btn btn-primary fl" id="btnAdd">添加账号</button>
+					</div>
+				</div>
+
+				<!--列表-->
+				<div class="row">
+					<div class="col-xs-12 num-table">
+						<ul class="nav nav-tabs" role="tablist" id="myTab">
+							<li role="presentation" class="active">
+								<a href="#home" role="tab" data-toggle="tab">设备登记</a>
+							</li>
+							<li role="presentation">
+								<a href="#profile" role="tab" data-toggle="tab">服务办理</a>
+							</li>
+							<li role="presentation">
+								<a href="#messages" role="tab" data-toggle="tab">设备激活</a>
+							</li>
+						</ul>
+
+						<div class="tab-content">
+							<div role="tabpanel" class="tab-pane active" id="home">
+								<h5>账号454783921的设备选择</h5>
+								<table class="table table-inner">
+									<tr>
+										<th>服务类型</th>
+										<th>设备型号</th>
+										<th>设备MAC</th>
+										<th>使用方式</th>
+										<th>操作</th>
+									</tr>
+									<tr>
+										<td>防盗</td>
+										<td>门磁探测器</td>
+										<td>0987654321</td>
+										<td>租用</td>
+										<td>
+											<button class="btn-edit-user"><span class="user-red">停用</span><span class="user-blue">启用</span></button>
+										</td>
+									</tr>
+									<tr>
+										<td>防盗</td>
+										<td>门磁探测器</td>
+										<td>0987654321</td>
+										<td>租用</td>
+										<td>
+											<button class="btn-edit-user"><span class="user-red">停用</span><span class="user-blue">启用</span></button>
+										</td>
+									</tr>
+									<tr class="text-gray">
+										<td>请使用扫描枪扫描设备</td>
+										<td>请使用扫描枪扫描设备</td>
+										<td>请使用扫描枪扫描设备</td>
+										<td>
+											<div class="dropdown buy">
+												<button class="btn-select-sm  btn-select-sm3 dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+											    购买
+											    <span class="caret caret-sm caret-sm3"></span>
+											  </button>
+												<ul class="dropdown-menu search-dropdown-sm" role="menu" aria-labelledby="dropdownMenu1">
+													<li role="presentation">
+														<a role="menuitem" tabindex="-1" href="#">租用</a>
+													</li>
+												</ul>
+											</div>
+										</td>
+										<td>
+											登记设备
+										</td>
+									</tr>
+								</table>
+							</div>
+							<div role="tabpanel" class="tab-pane" id="profile">
+								<h5>账号454783921的服务办理</h5>
+								<table class="table table-inner">
+									<tr>
+										<th>服务类型</th>
+										<th>操作</th>
+									</tr>
+									<tr>
+										<td>用电告警</td>
+										<td>
+											<button class="btn-edit-user"><span class="user-red">停用</span><span class="user-blue">启用</span></button>
+										</td>
+									</tr>
+									<tr>
+										<td>用电告警</td>
+										<td>
+											<button class="btn-edit-user"><span class="user-red">停用</span><span class="user-blue">启用</span></button>
+										</td>
+									</tr>
+								</table>
+							</div>
+							<div role="tabpanel" class="tab-pane" id="messages">
+								<h5>账号454783921的待激活设备</h5>
+								<table class="table table-inner">
+									<tr>
+										<th>服务类型</th>
+										<th>设备型号</th>
+										<th>设备MAC</th>
+										<th>使用方式</th>
+										<th>操作</th>
+									</tr>
+									<tr>
+										<td>防盗</td>
+										<td>门磁探测器</td>
+										<td>346378291343</td>
+										<td>租用</td>
+										<td>
+											<button class="btn-edit-user"><span class="user-red">停用</span><span class="user-blue">启用</span></button>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--修改密码弹窗-->
+		<div class="container-fluid info-box" id="alertSitting">
+			<div class="row info">
+				<header>修改密码
+					<div class="btn-close"></div>
+				</header>
+				<form class="form-horizontal" role="form">
+					<div class="form-group"> <label for="inputEmail3" class="col-xs-2 control-label">密码：</label>
+						<div class="col-xs-10"> <input type="password" class="form-control" id="inputEmail3" placeholder=""> </div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-12"> <button type="submit" class="btn btn-primary btn-alert" id="">保&nbsp;存</button> </div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</body>
+
+</html>
